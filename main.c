@@ -11,7 +11,6 @@ void measure_time(void (*sort_func)(file*, int, int), file* files, int amount, i
 
     start_time = omp_get_wtime();
 
-    
     sort_func(files, amount, order);
 
     end_time = omp_get_wtime();
