@@ -11,7 +11,6 @@ void measure_time(void (*sort_func)(file*, int, int), file* files, int amount, i
 
     start_time = omp_get_wtime();
 
-    
     sort_func(files, amount, order);
 
     end_time = omp_get_wtime();
@@ -26,7 +25,7 @@ int main()
 {
     setlocale(LC_ALL, "rus");
 
-    char path[256] = "c:/*.*";
+    wchar_t path[256] = L"c:/*.*";
     int file_count;
     file* lol = get_files(path, &file_count);
 
@@ -240,7 +239,7 @@ int main()
 
         case 4:
             printf("Enter the path; Use / as the folder separator, be sure to add *.* at the end(Example: C:/Temp/*.*)\n");
-            scanf("%s", path);
+            wscanf(L"%ls", path);
             lol = get_files(path, &file_count);
             break;
             
